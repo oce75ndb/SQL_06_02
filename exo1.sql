@@ -96,7 +96,7 @@ VALUES
 SELECT * FROM eleves
 ORDER BY nom ASC;
 
--- Création vue --
+-- Création vue (à revoir) --
 CREATE VIEW vue_eleves_notes AS
 SELECT 
     e.id AS eleve_id,
@@ -109,15 +109,27 @@ FROM eleves e
 LEFT JOIN notes n ON e.id = n.eleve_id
 ORDER BY e.nom, e.prenom, n.matiere;
 
+-- Affichage vue --
+
 SELECT * FROM vue_eleves_notes;
+
+-- Affichage des élèves ayant plus de 20 ans --
 
 SELECT COUNT(*) FROM eleves WHERE YEAR(CURDATE()) - YEAR(date_naissance) >= 20;
 
+-- Moyenne des notes par matière --
+
 SELECT matiere, SUM(note) / COUNT(note) AS moyennne FROM notes GROUP BY matiere;
+
+-- Création d'un utilisateur --
 
 CREATE USER 'jean-pierre'@'localhost' IDENTIFIED BY '123456789';
 
+-- Création des droits --
+
 GRANT SELECT ON bdd06022025.vue_eleves_notes TO 'jean-pierre'@'localhost';
+
+-- Création d'un utilisateur admin --
 
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin123456789';
 
