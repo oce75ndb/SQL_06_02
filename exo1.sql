@@ -8,8 +8,6 @@ CREATE TABLE eleves (
     nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
     date_naissance DATE NOT NULL,
-    email VARCHAR(100) UNIQUE,
-    telephone VARCHAR(20),
     classe VARCHAR(10) NOT NULL
 );
 
@@ -25,18 +23,18 @@ CREATE TABLE notes (
 
 -- Ajout de 10 élèves --
 
-INSERT INTO eleves (nom, prenom, date_naissance, email, telephone, classe)
+INSERT INTO eleves (nom, prenom, date_naissance, classe)
 VALUES 
-('Dupont', 'Marie', '2005-04-12', 'marie.dupont@email.com', '0612345678', 'BTS SIO'),
-('Lemoine', 'Lucas', '2004-09-30', 'lucas.lemoine@email.com', '0698765432', 'BTS SIO'),
-('Martin', 'Camille', '2006-01-22', 'camille.martin@email.com', '0678901234', 'BTS SIO'),
-('Bernard', 'Thomas', '2005-07-15', 'thomas.bernard@email.com', '0687654321', 'BTS CG'),
-('Moreau', 'Sophie', '2006-05-18', 'sophie.moreau@email.com', '0671123456', 'BTS CG'),
-('Roux', 'Antoine', '2005-02-25', 'antoine.roux@email.com', '0654321987', 'BTS SIO'),
-('Fournier', 'Emma', '2006-03-30', 'emma.fournier@email.com', '0643219876', 'BTS CG'),
-('Girard', 'Hugo', '2005-11-10', 'hugo.girard@email.com', '0623456789', 'BTS SIO'),
-('Bertrand', 'Laura', '2006-08-05', 'laura.bertrand@email.com', '0611223344', 'BTS CG'),
-('Lefevre', 'Maxime', '2005-06-20', 'maxime.lefevre@email.com', '0609876543', 'BTS SIO');
+('Dupont', 'Marie', '2005-04-12', 'BTS SIO'),
+('Lemoine', 'Lucas', '2004-09-30', 'BTS SIO'),
+('Martin', 'Camille', '2006-01-22', 'BTS SIO'),
+('Bernard', 'Thomas', '2005-07-15', 'BTS CG'),
+('Moreau', 'Sophie', '2006-05-18', 'BTS CG'),
+('Roux', 'Antoine', '2005-02-25', 'BTS SIO'),
+('Fournier', 'Emma', '2006-03-30', 'BTS CG'),
+('Girard', 'Hugo', '2005-11-10', 'BTS SIO'),
+('Bertrand', 'Laura', '2006-08-05', 'BTS CG'),
+('Lefevre', 'Maxime', '2005-06-20', 'BTS SIO');
 
 -- Ajout de 30 notes --
 
